@@ -1,0 +1,83 @@
+PODS:
+  - libextobjc (0.4.1):
+    - libextobjc/EXTADT (= 0.4.1)
+    - libextobjc/EXTConcreteProtocol (= 0.4.1)
+    - libextobjc/EXTKeyPathCoding (= 0.4.1)
+    - libextobjc/EXTNil (= 0.4.1)
+    - libextobjc/EXTSafeCategory (= 0.4.1)
+    - libextobjc/EXTScope (= 0.4.1)
+    - libextobjc/EXTSelectorChecking (= 0.4.1)
+    - libextobjc/EXTSynthesize (= 0.4.1)
+    - libextobjc/NSInvocation+EXT (= 0.4.1)
+    - libextobjc/NSMethodSignature+EXT (= 0.4.1)
+    - libextobjc/RuntimeExtensions (= 0.4.1)
+    - libextobjc/UmbrellaHeader (= 0.4.1)
+  - libextobjc/EXTADT (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTConcreteProtocol (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTKeyPathCoding (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTNil (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTSafeCategory (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTScope (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTSelectorChecking (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTSynthesize (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/NSInvocation+EXT (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/NSMethodSignature+EXT (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/RuntimeExtensions (0.4.1)
+  - libextobjc/UmbrellaHeader (0.4.1)
+  - QHCoreLib (0.0.23):
+    - QHCoreLib/QHAsync (= 0.0.23)
+    - QHCoreLib/QHBase (= 0.0.23)
+    - QHCoreLib/QHLog (= 0.0.23)
+    - QHCoreLib/QHNetwork (= 0.0.23)
+    - QHCoreLib/QHProfiler (= 0.0.23)
+    - QHCoreLib/QHUI (= 0.0.23)
+  - QHCoreLib/QHAsync (0.0.23):
+    - QHCoreLib/QHBase
+    - QHCoreLib/QHLog
+    - QHCoreLib/QHProfiler
+  - QHCoreLib/QHBase (0.0.23):
+    - libextobjc (= 0.4.1)
+  - QHCoreLib/QHLog (0.0.23):
+    - QHCoreLib/QHBase
+  - QHCoreLib/QHNetwork (0.0.23):
+    - QHCoreLib/QHAsync
+    - QHCoreLib/QHBase
+    - QHCoreLib/QHLog
+    - QHCoreLib/QHProfiler
+  - QHCoreLib/QHProfiler (0.0.23):
+    - QHCoreLib/QHBase
+  - QHCoreLib/QHUI (0.0.23):
+    - QHCoreLib/QHBase
+    - UIDevice-Hardware
+  - UIDevice-Hardware (0.1.10)
+
+DEPENDENCIES:
+  - QHCoreLib (from `http://git.code.oa.com/QHLib/QHCoreLib.git`)
+
+EXTERNAL SOURCES:
+  QHCoreLib:
+    :git: http://git.code.oa.com/QHLib/QHCoreLib.git
+
+CHECKOUT OPTIONS:
+  QHCoreLib:
+    :commit: 5ccbf3e976acd55913fa0f054861fdede299e68d
+    :git: http://git.code.oa.com/QHLib/QHCoreLib.git
+
+SPEC CHECKSUMS:
+  libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
+  QHCoreLib: 52f0c2c6a64b7155533c22fc22b9e68c1bc7539f
+  UIDevice-Hardware: 4bb15b9bd9878762ab879ac86185baad17b6c3ff
+
+PODFILE CHECKSUM: ccf63aaf500b13b9397ce966d308387248586cc3
+
+COCOAPODS: 1.2.1

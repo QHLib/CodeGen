@@ -1,0 +1,17 @@
+{
+  "name": "qhnetwork-api-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js Sample iOS",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tony Tang <tangchang21@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "swig": "^1.4.2",
+    "vinyl": "^2.1.0",
+    "vinyl-fs": "^2.4.4"
+  }
+}

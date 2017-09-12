@@ -1,0 +1,130 @@
+{
+  "name": "QHCoreLib",
+  "version": "0.0.23",
+  "summary": "QHCoreLib inlucdes some macros and util classes.",
+  "homepage": "http://git.code.oa.com/QHLib/QHCoreLib.git",
+  "license": "MIT",
+  "authors": {
+    "changtang(唐畅)": "changtang@tencent.com"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source": {
+    "git": "http://git.code.oa.com/QHLib/QHCoreLib.git",
+    "tag": "0.0.23"
+  },
+  "requires_arc": true,
+  "source_files": "QHCoreLib/QHCoreLib.h",
+  "public_header_files": "QHCoreLib/QHCoreLib.h",
+  "prefix_header_contents": "",
+  "xcconfig": {
+    "OTHER_LDFLAGS": "-ObjC"
+  },
+  "subspecs": [
+    {
+      "name": "QHBase",
+      "source_files": "QHCoreLib/Base/**/*.{h,m}",
+      "public_header_files": "QHCoreLib/Base/**/*.h",
+      "private_header_files": "QHCoreLib/Base/Internal/**/*.h",
+      "frameworks": [
+        "Foundation",
+        "Security",
+        "MobileCoreServices",
+        "CoreGraphics"
+      ],
+      "dependencies": {
+        "libextobjc": [
+          "0.4.1"
+        ]
+      }
+    },
+    {
+      "name": "QHLog",
+      "source_files": "QHCoreLib/Log/**/*.{h,m}",
+      "public_header_files": "QHCoreLib/Log/**/*.h",
+      "private_header_files": "QHCoreLib/Log/Lumberjack/**/*.h",
+      "frameworks": "Foundation",
+      "dependencies": {
+        "QHCoreLib/QHBase": [
+
+        ]
+      }
+    },
+    {
+      "name": "QHProfiler",
+      "source_files": "QHCoreLib/Profiler/**/*.{h,m}",
+      "public_header_files": "QHCoreLib/Profiler/**/*.h",
+      "frameworks": [
+        "Foundation",
+        "QuartzCore"
+      ],
+      "dependencies": {
+        "QHCoreLib/QHBase": [
+
+        ]
+      }
+    },
+    {
+      "name": "QHAsync",
+      "source_files": "QHCoreLib/Async/**/*.{h,m}",
+      "public_header_files": "QHCoreLib/Async/**/*.h",
+      "frameworks": "Foundation",
+      "dependencies": {
+        "QHCoreLib/QHBase": [
+
+        ],
+        "QHCoreLib/QHLog": [
+
+        ],
+        "QHCoreLib/QHProfiler": [
+
+        ]
+      }
+    },
+    {
+      "name": "QHNetwork",
+      "source_files": "QHCoreLib/Network/**/*.{h,m}",
+      "public_header_files": "QHCoreLib/Network/**/*.h",
+      "private_header_files": "QHCoreLib/Network/Worker-internal/**/*.h",
+      "frameworks": [
+        "Foundation",
+        "CoreTelephony",
+        "MobileCoreServices",
+        "SystemConfiguration",
+        "CoreGraphics"
+      ],
+      "dependencies": {
+        "QHCoreLib/QHBase": [
+
+        ],
+        "QHCoreLib/QHLog": [
+
+        ],
+        "QHCoreLib/QHProfiler": [
+
+        ],
+        "QHCoreLib/QHAsync": [
+
+        ]
+      }
+    },
+    {
+      "name": "QHUI",
+      "source_files": "QHCoreLib/UI/**/*.{h,m}",
+      "public_header_files": "QHCoreLib/UI/**/*.h",
+      "frameworks": [
+        "Foundation",
+        "CoreGraphics"
+      ],
+      "dependencies": {
+        "QHCoreLib/QHBase": [
+
+        ],
+        "UIDevice-Hardware": [
+
+        ]
+      }
+    }
+  ]
+}
