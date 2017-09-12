@@ -6,8 +6,6 @@
 
 @interface QHNetworkSampleApi : QHNetworkJsonApi
 
-- (instancetype)init;
-
 @end
 
 @interface QHNetworkSampleApiResult : QHNetworkJsonApiResult
