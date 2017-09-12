@@ -16,7 +16,7 @@ if (process.argv.length > 3) {
 }
 console.log(source_dir, '=>', dest_dir, '\n');
 
-vfs.src('**/*.qhnetworkapi', { cwd: source_dir, base: source_dir })
+vfs.src('**/*.qhapi', { cwd: source_dir, base: source_dir })
   .pipe(main.generator({ dest: dest_dir }))
   .pipe(main.reporter())
   .pipe(vfs.dest(dest_dir));
