@@ -1,3 +1,4 @@
 {
-    "className": "QHNetworkSampleGet"
+    "className": "QHNetworkSampleGet",
+    "superClassName": "QHNetworkSampleCustom"
 }

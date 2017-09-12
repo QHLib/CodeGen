@@ -8,13 +8,7 @@
 
 - (instancetype)init
 {
-    self = [super initWithUrl:@"https://httpbin.org/post"
-                    queryDict:nil
-                     bodyDict:@{}];
-    if (self) {
-
-    }
-    return self;
+    return [super initWithUrl:@"https://httpbin.org/post" queryDict:nil bodyDict:@{}];
 }
 
 @end

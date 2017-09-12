@@ -8,13 +8,8 @@
 
 - (instancetype)init
 {
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://httpbin.org/get"]];
-
-    self = [super initWithUrlRequest:request];
-    if (self) {
-
-    }
-    return self;
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://httpbin.org/get"]];
+    return [super initWithUrlRequest:urlRequest];
 }
 
 @end
@@ -26,7 +21,7 @@
           error:(NSError *__autoreleasing *)error
             api:(QHNetworkSampleCustom *)api _QHNetworkSampleCustom:(int)notUsed
 {
-
+    
 }
 
 @end

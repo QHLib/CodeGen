@@ -14,6 +14,8 @@ function expand_config(config) {
     resultSuperClassName: config.superClassName + "Result",
   };
 
+  config['isCustomSuperClass'] = (config['superClassName'] != 'QHNetworkJsonApi');
+
   Object.assign(config, expand);
 }
 
@@ -24,7 +26,7 @@ const generator = function(options) {
     var config;
     try {
       config = JSON.parse(file.contents.toString(enc));
-      Object.assign(config, default_config);
+      config = Object.assign({}, default_config, config);
       expand_config(config);
     } catch(err) {
       console.log('invalid input: ' + file.relative);
@@ -34,8 +36,8 @@ const generator = function(options) {
       return;
     }
 
-    //console.log('config of ' + file.relative + ':');
-    //console.log(config);
+    // console.log('config of ' + file.relative + ':');
+    // console.log(config);
 
     // build a new vinyl to make `extname` and `stem` methods available
     const dest = options['dest'] || file.cwd;

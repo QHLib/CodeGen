@@ -2,15 +2,16 @@
 // And will not be overwritten if it has alreday exists
 // Add your code here
 
-#import "QHNetworkJsonApi.h"
+#import <QHCoreLib/QHCoreLib.h>
+#import "QHNetworkSampleCustom.h"
 
-@interface QHNetworkSampleGet : QHNetworkJsonApi
+@interface QHNetworkSampleGet : QHNetworkSampleCustom
 
 - (instancetype)init;
 
 @end
 
-@interface QHNetworkSampleGetResult : QHNetworkJsonApiResult
+@interface QHNetworkSampleGetResult : QHNetworkSampleCustomResult
 
 + (void)p_parse:(QHNetworkSampleGetResult *)result
        response:(QHNetworkResponse *)response

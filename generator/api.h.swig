@@ -2,7 +2,8 @@
 // And will not be overwritten if it has alreday exists
 // Add your code here
 
-#import "{{ superClassName }}.h"
+#import <QHCoreLib/QHCoreLib.h>{% if isCustomSuperClass  %}
+#import "{{ superClassName }}.h"{% endif %}
 
 @interface {{ className }} : {{ superClassName }}
 

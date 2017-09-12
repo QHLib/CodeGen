@@ -9,7 +9,7 @@ NS_ASSUME_NONNULL_BEGIN
 @implementation QHNetworkSamplePost (gen)
 
 QH_NETWORK_API_IMPL_INDIRECT(QHNetworkSamplePost, QHNetworkSamplePostResult,
-                             QHNetworkJsonApi, QHNetworkJsonApiResult);
+                             QHNetworkSampleCustom, QHNetworkSampleCustomResult);
 
 @end
 

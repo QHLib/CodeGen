@@ -2,9 +2,11 @@
 // And will not be overwritten if it has alreday exists
 // Add your code here
 
-#import "QHNetworkJsonApi.h"
+#import <QHCoreLib/QHCoreLib.h>
 
 @interface QHNetworkSampleApi : QHNetworkJsonApi
+
+- (instancetype)init;
 
 @end
 
