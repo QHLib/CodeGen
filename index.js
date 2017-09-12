@@ -14,7 +14,7 @@ var dest_dir = source_dir;
 if (process.argv.length > 3) {
   dest_dir = path.resolve(current_dir, process.argv[3]);
 }
-console.log(source_dir, '=>', dest_dir, '\n');
+//console.log(source_dir, '=>', dest_dir, '\n');
 
 vfs.src('**/*.qhapi', { cwd: source_dir, base: source_dir })
   .pipe(main.generator({ dest: dest_dir }))
