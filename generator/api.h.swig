@@ -5,6 +5,8 @@
 #import <QHCoreLib/QHCoreLib.h>{% if isCustomSuperClass  %}
 #import "{{ superClassName }}.h"{% endif %}
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface {{ className }} : {{ superClassName }}
 
 <#- (instancetype)init;#>
@@ -19,5 +21,7 @@
             api:({{ className }} *)api _{{ className }}:(int)notUsed;
 
 @end
+
+NS_ASSUME_NONNULL_END
 
 #import "{{ className }}+gen.h"
