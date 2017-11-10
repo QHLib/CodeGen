@@ -3,15 +3,15 @@
 // Add your code here
 
 #import <QHCoreLib/QHCoreLib.h>
-#import "QHNetworkSampleCustom.h"
+#import "QHNetworkSampleApi.h"
 
-@interface QHNetworkSampleGet : QHNetworkSampleCustom
+NS_ASSUME_NONNULL_BEGIN
 
-- (instancetype)init;
+@interface QHNetworkSampleGet : QHNetworkSampleApi
 
 @end
 
-@interface QHNetworkSampleGetResult : QHNetworkSampleCustomResult
+@interface QHNetworkSampleGetResult : QHNetworkSampleApiResult
 
 + (void)p_parse:(QHNetworkSampleGetResult *)result
        response:(QHNetworkResponse *)response
@@ -19,5 +19,7 @@
             api:(QHNetworkSampleGet *)api _QHNetworkSampleGet:(int)notUsed;
 
 @end
+
+NS_ASSUME_NONNULL_END
 
 #import "QHNetworkSampleGet+gen.h"

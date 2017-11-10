@@ -4,12 +4,9 @@
 
 #import "QHNetworkSamplePost.h"
 
-@implementation QHNetworkSamplePost
+NS_ASSUME_NONNULL_BEGIN
 
-- (instancetype)init
-{
-    return [super initWithUrl:@"https://httpbin.org/post" queryDict:nil bodyDict:@{}];
-}
+@implementation QHNetworkSamplePost
 
 @end
 
@@ -20,7 +17,8 @@
           error:(NSError *__autoreleasing *)error
             api:(QHNetworkSamplePost *)api _QHNetworkSamplePost:(int)notUsed
 {
-
 }
 
 @end
+
+NS_ASSUME_NONNULL_END

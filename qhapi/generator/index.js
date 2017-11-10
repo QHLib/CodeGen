@@ -1,11 +1,12 @@
-const swig = require('swig');
+const ejs = require('ejs');
 const fs = require('fs');
 
-// FIXME: disable force overwrite  for release
-const force_overwrite = false;
+const force_overwrite = (process.env['NODE_ENV'] == 'dev');
 
 module.exports.api_h = (function () {
-  const template = swig.compileFile(__dirname + '/api.h.swig');
+  const templateFile = __dirname + '/api.h.ejs';
+  const template = ejs.compile(fs.readFileSync(templateFile, 'utf-8'),
+                               { 'filename': templateFile });
 
   function gen(file, config, stream) {
     const targetFile = file.clone();
@@ -25,7 +26,9 @@ module.exports.api_h = (function () {
 })();
 
 module.exports.api_m = (function () {
-  const template = swig.compileFile(__dirname + '/api.m.swig');
+  const templateFile = __dirname + '/api.m.ejs';
+  const template = ejs.compile(fs.readFileSync(templateFile, 'utf-8'),
+                               { 'filename': templateFile });
 
   function gen(file, config, stream) {
     const targetFile = file.clone();
@@ -45,7 +48,9 @@ module.exports.api_m = (function () {
 })();
 
 module.exports.api_gen_h = (function () {
-  const template = swig.compileFile(__dirname + '/api+gen.h.swig');
+  const templateFile = __dirname + '/api+gen.h.ejs';
+  const template = ejs.compile(fs.readFileSync(templateFile, 'utf-8'),
+                               { 'filename': templateFile });
 
   function gen(file, config, stream) {
     const targetFile = file.clone();
@@ -67,7 +72,9 @@ module.exports.api_gen_h = (function () {
 })();
 
 module.exports.api_gen_m = (function () {
-  const template = swig.compileFile(__dirname + '/api+gen.m.swig');
+  const templateFile = __dirname + '/api+gen.m.ejs';
+  const template = ejs.compile(fs.readFileSync(templateFile, 'utf-8'),
+                               { 'filename': templateFile });
 
   function gen(file, config, stream) {
     const targetFile = file.clone();

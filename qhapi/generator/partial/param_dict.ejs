@@ -1,0 +1,5 @@
+@{
+<% params.forEach(function(p) { -%>
+<%- Array(offset + 1).join(' ') -%>@"<%- p['name']  %>": <%- p['name'] %> ?: @"",
+<% }); -%>
+<%- Array(offset + 1).join(' ') -%>}<% -%>

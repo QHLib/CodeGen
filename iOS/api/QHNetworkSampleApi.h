@@ -4,6 +4,8 @@
 
 #import <QHCoreLib/QHCoreLib.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface QHNetworkSampleApi : QHNetworkJsonApi
 
 @end
@@ -16,5 +18,7 @@
             api:(QHNetworkSampleApi *)api _QHNetworkSampleApi:(int)notUsed;
 
 @end
+
+NS_ASSUME_NONNULL_END
 
 #import "QHNetworkSampleApi+gen.h"

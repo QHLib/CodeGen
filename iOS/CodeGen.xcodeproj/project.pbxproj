@@ -16,12 +16,10 @@
 		EA3854301F677A2200AF2F83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA38542E1F677A2200AF2F83 /* LaunchScreen.storyboard */; };
 		EA38543C1F677DD900AF2F83 /* QHNetworkSampleApi+gen.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3854391F677DD900AF2F83 /* QHNetworkSampleApi+gen.m */; };
 		EA38543D1F677DD900AF2F83 /* QHNetworkSampleApi.m in Sources */ = {isa = PBXBuildFile; fileRef = EA38543B1F677DD900AF2F83 /* QHNetworkSampleApi.m */; };
-		EA5037C71F67B7C600D95D59 /* QHNetworkSampleCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5037BE1F67B7C500D95D59 /* QHNetworkSampleCustom.m */; };
 		EA5037C81F67B7C600D95D59 /* QHNetworkSampleGet.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5037C21F67B7C500D95D59 /* QHNetworkSampleGet.m */; };
 		EA5037C91F67B7C600D95D59 /* QHNetworkSampleGet+gen.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5037C31F67B7C600D95D59 /* QHNetworkSampleGet+gen.m */; };
 		EA5037CA1F67B7C600D95D59 /* QHNetworkSamplePost.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5037C41F67B7C600D95D59 /* QHNetworkSamplePost.m */; };
 		EA5037CB1F67B7C600D95D59 /* QHNetworkSamplePost+gen.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5037C51F67B7C600D95D59 /* QHNetworkSamplePost+gen.m */; };
-		EA5037CC1F67B7C600D95D59 /* QHNetworkSampleCustom+gen.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5037C61F67B7C600D95D59 /* QHNetworkSampleCustom+gen.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,16 +40,12 @@
 		EA3854391F677DD900AF2F83 /* QHNetworkSampleApi+gen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "QHNetworkSampleApi+gen.m"; sourceTree = "<group>"; };
 		EA38543B1F677DD900AF2F83 /* QHNetworkSampleApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QHNetworkSampleApi.m; sourceTree = "<group>"; };
 		EA5037BD1F67B7C500D95D59 /* QHNetworkSamplePost+gen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "QHNetworkSamplePost+gen.h"; sourceTree = "<group>"; };
-		EA5037BE1F67B7C500D95D59 /* QHNetworkSampleCustom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QHNetworkSampleCustom.m; sourceTree = "<group>"; };
-		EA5037C11F67B7C500D95D59 /* QHNetworkSampleCustom+gen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "QHNetworkSampleCustom+gen.h"; sourceTree = "<group>"; };
 		EA5037C21F67B7C500D95D59 /* QHNetworkSampleGet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QHNetworkSampleGet.m; sourceTree = "<group>"; };
 		EA5037C31F67B7C600D95D59 /* QHNetworkSampleGet+gen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "QHNetworkSampleGet+gen.m"; sourceTree = "<group>"; };
 		EA5037C41F67B7C600D95D59 /* QHNetworkSamplePost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QHNetworkSamplePost.m; sourceTree = "<group>"; };
 		EA5037C51F67B7C600D95D59 /* QHNetworkSamplePost+gen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "QHNetworkSamplePost+gen.m"; sourceTree = "<group>"; };
-		EA5037C61F67B7C600D95D59 /* QHNetworkSampleCustom+gen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "QHNetworkSampleCustom+gen.m"; sourceTree = "<group>"; };
 		EA5037FE1F67BEA600D95D59 /* QHNetworkSampleGet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QHNetworkSampleGet.h; sourceTree = "<group>"; };
 		EA5037FF1F67BEA600D95D59 /* QHNetworkSampleApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QHNetworkSampleApi.h; sourceTree = "<group>"; };
-		EA5038001F67BEA600D95D59 /* QHNetworkSampleCustom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QHNetworkSampleCustom.h; sourceTree = "<group>"; };
 		EA5038011F67BEA600D95D59 /* QHNetworkSamplePost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QHNetworkSamplePost.h; sourceTree = "<group>"; };
 		EA5038021F67BEA700D95D59 /* QHNetworkSampleGet+gen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "QHNetworkSampleGet+gen.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,17 +130,13 @@
 				EA3854381F677DD900AF2F83 /* QHNetworkSampleApi+gen.h */,
 				EA3854391F677DD900AF2F83 /* QHNetworkSampleApi+gen.m */,
 				EA5037FE1F67BEA600D95D59 /* QHNetworkSampleGet.h */,
-				EA5038021F67BEA700D95D59 /* QHNetworkSampleGet+gen.h */,
 				EA5037C21F67B7C500D95D59 /* QHNetworkSampleGet.m */,
+				EA5038021F67BEA700D95D59 /* QHNetworkSampleGet+gen.h */,
 				EA5037C31F67B7C600D95D59 /* QHNetworkSampleGet+gen.m */,
 				EA5038011F67BEA600D95D59 /* QHNetworkSamplePost.h */,
 				EA5037C41F67B7C600D95D59 /* QHNetworkSamplePost.m */,
 				EA5037BD1F67B7C500D95D59 /* QHNetworkSamplePost+gen.h */,
 				EA5037C51F67B7C600D95D59 /* QHNetworkSamplePost+gen.m */,
-				EA5038001F67BEA600D95D59 /* QHNetworkSampleCustom.h */,
-				EA5037BE1F67B7C500D95D59 /* QHNetworkSampleCustom.m */,
-				EA5037C11F67B7C500D95D59 /* QHNetworkSampleCustom+gen.h */,
-				EA5037C61F67B7C600D95D59 /* QHNetworkSampleCustom+gen.m */,
 			);
 			path = api;
 			sourceTree = "<group>";
@@ -277,8 +267,6 @@
 				EA3854251F677A2200AF2F83 /* AppDelegate.m in Sources */,
 				EA5037CB1F67B7C600D95D59 /* QHNetworkSamplePost+gen.m in Sources */,
 				EA5037C81F67B7C600D95D59 /* QHNetworkSampleGet.m in Sources */,
-				EA5037CC1F67B7C600D95D59 /* QHNetworkSampleCustom+gen.m in Sources */,
-				EA5037C71F67B7C600D95D59 /* QHNetworkSampleCustom.m in Sources */,
 				EA38543D1F677DD900AF2F83 /* QHNetworkSampleApi.m in Sources */,
 				EA5037CA1F67B7C600D95D59 /* QHNetworkSamplePost.m in Sources */,
 				EA5037C91F67B7C600D95D59 /* QHNetworkSampleGet+gen.m in Sources */,

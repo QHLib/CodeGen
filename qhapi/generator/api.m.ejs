@@ -2,20 +2,20 @@
 // And will not be overwritten if it has alreday exists
 // Add your code here
 
-#import "QHNetworkSampleGet.h"
+#import "<%- className %>.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@implementation QHNetworkSampleGet
+@implementation <%- className %>
 
 @end
 
-@implementation QHNetworkSampleGetResult
+@implementation <%- resultClassName %>
 
-+ (void)p_parse:(QHNetworkSampleGetResult *)result
++ (void)p_parse:(<%- resultClassName %> *)result
        response:(QHNetworkResponse *)response
           error:(NSError *__autoreleasing *)error
-            api:(QHNetworkSampleGet *)api _QHNetworkSampleGet:(int)notUsed
+            api:(<%- className %> *)api _<%- className %>:(int)notUsed
 {
 }
 

@@ -9,11 +9,14 @@
 #import "AppDelegate.h"
 #import <QHCoreLib/QHCoreLib.h>
 #import "QHNetworkSampleApi.h"
-
+#import "QHNetworkSampleGet.h"
+#import "QHNetworkSamplePost.h"
 
 @interface AppDelegate ()
 
 @property (nonatomic, strong) QHNetworkSampleApi *api;
+@property (nonatomic, strong) QHNetworkSampleGet *getApi;
+@property (nonatomic, strong) QHNetworkSamplePost *postApi;
 
 @end
 
@@ -22,13 +25,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-    self.api = [[QHNetworkSampleApi alloc] initWithUrl:@"https://httpbin.org/post"
-                                             queryDict:@{ @"hello": @"there" }
-                                              bodyDict:@{ @"body": @"data" }];
+    self.api = [QHNetworkSampleApi request];
     [self.api startWithSuccess:^(QHNetworkSampleApi * _Nonnull api, QHNetworkSampleApiResult * _Nonnull result) {
-        QHLogDebug(@"result: %@", result);
     } fail:^(QHNetworkSampleApi * _Nonnull api, NSError * _Nonnull error) {
-        QHLogDebug(@"error: %@", error);
+    }];
+
+    self.getApi = [QHNetworkSampleGet request_with_query1:@"aaa" query2:@"bbb"];
+    [self.getApi startWithSuccess:^(QHNetworkSampleGet * _Nonnull api, QHNetworkSampleGetResult * _Nonnull result) {
+    } fail:^(QHNetworkSampleGet * _Nonnull api, NSError * _Nonnull error) {
+    }];
+
+    self.postApi = [QHNetworkSamplePost request_with_query1:@"aaa" query2:@"bbb" body1:@"ccc" bdoy2:@"ddd"];
+    [self.postApi startWithSuccess:^(QHNetworkSamplePost * _Nonnull api, QHNetworkSamplePostResult * _Nonnull result) {
+    } fail:^(QHNetworkSamplePost * _Nonnull api, NSError * _Nonnull error) {
     }];
     
     return YES;

@@ -1,4 +1,18 @@
 {
-    "className": "QHNetworkSamplePost",
-    "superClassName": "QHNetworkSampleCustom"
+  "className": "QHNetworkSamplePost",
+  "superClassName": "QHNetworkSampleApi",
+  "url": "https://httpbin.org/post",
+  "requests": [
+    {
+      "method": "POST",
+      "query": [
+        { "name": "query1" },
+        { "name": "query2" }
+      ],
+      "body": [
+        { "name": "body1" },
+        { "name": "bdoy2" }
+      ]
+    }
+  ]
 }

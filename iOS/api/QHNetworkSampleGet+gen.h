@@ -10,6 +10,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 QH_NETWORK_API_DECL(QHNetworkSampleGet, QHNetworkSampleGetResult);
 
++ (instancetype)request_with_query1:(NSString *)query1;
+
++ (instancetype)request_with_query1:(NSString *)query1
+                             query2:(NSString *)query2;
+
 @end
 
 @interface QHNetworkSampleGetResult (gen)

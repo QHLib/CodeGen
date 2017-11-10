@@ -11,6 +11,20 @@ NS_ASSUME_NONNULL_BEGIN
 QH_NETWORK_API_IMPL_INDIRECT(QHNetworkSampleApi, QHNetworkSampleApiResult,
                              QHNetworkJsonApi, QHNetworkJsonApiResult);
 
++ (NSString *)p_url
+{
+    return @"https://httpbin.org/ip";
+}
+
++ (instancetype)request
+{
+    NSDictionary *queryDict = @{
+                                };
+
+    return [[self alloc] initWithUrl:[self p_url]
+                           queryDict:queryDict];
+}
+
 @end
 
 @implementation QHNetworkSampleApiResult (gen)

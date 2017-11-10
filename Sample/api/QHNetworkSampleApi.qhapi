@@ -1,3 +1,4 @@
 {
-    "className": "QHNetworkSampleApi"
+  "className": "QHNetworkSampleApi",
+  "url": "https://httpbin.org/ip"
 }

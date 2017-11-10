@@ -4,6 +4,8 @@
 
 #import "QHNetworkSampleApi.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @implementation QHNetworkSampleApi
 
 @end
@@ -15,7 +17,8 @@
           error:(NSError *__autoreleasing *)error
             api:(QHNetworkSampleApi *)api _QHNetworkSampleApi:(int)notUsed
 {
-
 }
 
 @end
+
+NS_ASSUME_NONNULL_END

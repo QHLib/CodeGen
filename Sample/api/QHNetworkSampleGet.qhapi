@@ -1,4 +1,20 @@
 {
-    "className": "QHNetworkSampleGet",
-    "superClassName": "QHNetworkSampleCustom"
+  "className": "QHNetworkSampleGet",
+  "superClassName": "QHNetworkSampleApi",
+  "url": "https://httpbin.org/get",
+  "requests": [
+    {
+      "name": "request",
+      "query": [
+        { "name": "query1" }
+      ]
+    },
+    {
+      "name": "request",
+      "query": [
+        { "name": "query1" },
+        { "name": "query2" }
+      ]
+    }
+  ]
 }

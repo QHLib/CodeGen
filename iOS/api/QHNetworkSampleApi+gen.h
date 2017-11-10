@@ -10,6 +10,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 QH_NETWORK_API_DECL(QHNetworkSampleApi, QHNetworkSampleApiResult);
 
++ (instancetype)request;
+
 @end
 
 @interface QHNetworkSampleApiResult (gen)

@@ -1,0 +1,13 @@
++ (instancetype)<%- method['name'] -%>
+<% if (method['params'] && method['params'].length > 0) { -%>
+<% var colonOffset = 29; method['params'].forEach(function(p, i) { -%>
+<% if (i == 0) {
+colonOffset += p['name'].length;
+-%>
+_with_<%- p['name'] %>:(<%- p['type'] %>)<%- p['name'] -%>
+<% } else { var spacelen = colonOffset - p['name'].length; -%>
+
+<%- Array(spacelen < 0 ? 0 : spacelen + 1).join(' ') %><%- p['name'] %>:(<%- p['type'] %>)<%- p['name'] -%>
+<% } -%>
+<% }); -%>
+<% } -%>
