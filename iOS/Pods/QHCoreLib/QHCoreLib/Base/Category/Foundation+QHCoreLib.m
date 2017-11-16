@@ -3,14 +3,16 @@
 //  QHCoreLib
 //
 //  Created by changtang on 2017/5/24.
-//  Copyright © 2017年 Tencent. All rights reserved.
+//  Copyright © 2017年 TCTONY. All rights reserved.
 //
 
 #import "Foundation+QHCoreLib.h"
 
 #import "QHInternal.h"
+#import "QHAsserts.h"
 #import "QHUtil.h"
 #import "QHDefaultValue.h"
+#import "QHWeakWrapper.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -41,6 +43,99 @@ QH_DUMMY_CLASS(FoudationQHCoreLib)
         }
         return nil;
     }
+}
+
+static const void *kNSObjectCarryASOKey = &kNSObjectCarryASOKey;
+- (void)setQh_handy_carry:(id _Nullable)qh_handy_carry
+{
+    objc_setAssociatedObject(self,
+                             kNSObjectCarryASOKey,
+                             qh_handy_carry,
+                             OBJC_ASSOCIATION_RETAIN);
+}
+- (id _Nullable)qh_handy_carry
+{
+    return objc_getAssociatedObject(self, kNSObjectCarryASOKey);
+}
+
+static const void *kNSObjectCarry2ASOKey = &kNSObjectCarry2ASOKey;
+- (void)setQh_handy_carry2:(id _Nullable)qh_handy_carry2
+{
+    objc_setAssociatedObject(self,
+                             kNSObjectCarry2ASOKey,
+                             qh_handy_carry2,
+                             OBJC_ASSOCIATION_RETAIN);
+}
+- (id _Nullable)qh_handy_carry2
+{
+    return objc_getAssociatedObject(self, kNSObjectCarry2ASOKey);
+}
+
+static const void *kNSObjectCarry3ASOKey = &kNSObjectCarry3ASOKey;
+- (void)setQh_handy_carry3:(id _Nullable)qh_handy_carry3
+{
+    objc_setAssociatedObject(self,
+                             kNSObjectCarry3ASOKey,
+                             qh_handy_carry3,
+                             OBJC_ASSOCIATION_RETAIN);
+}
+- (id _Nullable)qh_handy_carry3
+{
+    return objc_getAssociatedObject(self, kNSObjectCarry3ASOKey);
+}
+
+static const void *kNSObjectWeakCarryASOKey = &kNSObjectWeakCarryASOKey;
+- (void)setQh_handy_weakCarry:(id _Nullable)qh_handy_weakCarry
+{
+    QHWeakWrapper *wrapper = objc_getAssociatedObject(self, kNSObjectWeakCarryASOKey);
+    if (wrapper && QH_IS(wrapper, QHWeakWrapper)) {
+        wrapper.obj = qh_handy_weakCarry;
+    } else {
+        objc_setAssociatedObject(self,
+                                 kNSObjectWeakCarryASOKey,
+                                 QHWeakWrap(qh_handy_weakCarry),
+                                 OBJC_ASSOCIATION_RETAIN);
+    }
+}
+- (id _Nullable)qh_handy_weakCarry
+{
+    return QHWeakUnwrap(objc_getAssociatedObject(self, kNSObjectWeakCarryASOKey));
+}
+
+static const void *kNSObjectWeakCarry2ASOKey = &kNSObjectWeakCarry2ASOKey;
+- (void)setQh_handy_weakCarry2:(id _Nullable)qh_handy_weakCarry2
+{
+    QHWeakWrapper *wrapper = objc_getAssociatedObject(self, kNSObjectWeakCarry2ASOKey);
+    if (wrapper && QH_IS(wrapper, QHWeakWrapper)) {
+        wrapper.obj = qh_handy_weakCarry2;
+    } else {
+        objc_setAssociatedObject(self,
+                                 kNSObjectWeakCarry2ASOKey,
+                                 QHWeakWrap(qh_handy_weakCarry2),
+                                 OBJC_ASSOCIATION_RETAIN);
+    }
+}
+- (id _Nullable)qh_handy_weakCarry2
+{
+    return QHWeakUnwrap(objc_getAssociatedObject(self, kNSObjectWeakCarry2ASOKey));
+}
+
+static const void *kNSObjectWeakCarry3ASOKey = &kNSObjectWeakCarry3ASOKey;
+- (void)setQh_handy_weakCarry3:(id _Nullable)qh_handy_weakCarry3
+{
+    QHWeakWrapper *wrapper = objc_getAssociatedObject(self, kNSObjectWeakCarry3ASOKey);
+    if (wrapper && QH_IS(wrapper, QHWeakWrapper)) {
+        wrapper.obj = qh_handy_weakCarry3;
+    } else {
+        objc_setAssociatedObject(self,
+                                 kNSObjectWeakCarry3ASOKey,
+                                 QHWeakWrap(qh_handy_weakCarry3),
+                                 OBJC_ASSOCIATION_RETAIN);
+    }
+}
+- (id _Nullable)qh_handy_weakCarry3
+{
+    return QHWeakUnwrap(objc_getAssociatedObject(self, kNSObjectWeakCarry3ASOKey));
 }
 
 @end
@@ -284,6 +379,16 @@ QH_DUMMY_CLASS(FoudationQHCoreLib)
     }
 }
 
+- (id _Nullable)qh_objectForKey:(id)key createIfNotExists:(id _Nonnull (^ _Nullable)(void))createBlock
+{
+    id object = [self objectForKey:key];
+    if (!object && createBlock) {
+        object = createBlock();
+        [self qh_setObject:object forKey:key];
+    }
+    return object;
+}
+
 @end
 
 @implementation NSMutableSet (QHCoreLib)
@@ -393,6 +498,122 @@ QH_DUMMY_CLASS(FoudationQHCoreLib)
 + (NSString * _Nullable)qh_mainBundle_displayName
 {
     return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"];
+}
+
+@end
+
+NSString * const kQHDateFormatFull = @"yyyy-MM-dd HH:mm:ss";
+NSString * const kQHDateFormatDate = @"yyyy-MM-dd";
+NSString * const kQHDateFormatDateChinese = @"yyyy年M月d日";
+NSString * const kQHDateFormatDateShort = @"yy-MM-dd";
+NSString * const kQHDateFormatDateShortChinese = @"yy年M月d日";
+NSString * const kQHDateFormatMouthDay = @"MM-dd";
+NSString * const kQHDateFormatMouthDayChinese = @"M月d日";
+NSString * const kQHDateFormatTime = @"HH:mm:ss";
+NSString * const kQHDateFormatTimeExtra = @"HH:mm:ss SSS";
+NSString * const kQHDateFormatWeekNumber = @"c";
+NSString * const kQHDateFormatWeekStringShort = @"ccc";
+NSString * const kQHDateFormatWeekStringLong = @"cccc";
+
+@implementation NSDateFormatter (QHCoreLib)
+
++ (NSDateFormatter *)qh_sharedFormatter:(NSString *)format
+{
+    static dispatch_semaphore_t lock;
+    static NSMutableDictionary *sharedFormatters;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        lock = dispatch_semaphore_create(1);
+        sharedFormatters = [NSMutableDictionary dictionary];
+    });
+
+    __block NSDateFormatter *ret = nil;
+    QHDispatchSemaphoreLock(lock, ^{
+        ret = [sharedFormatters objectForKey:format];
+        if (!ret) {
+            ret = [[self alloc] init];
+            ret.dateFormat = format;
+            [sharedFormatters qh_setObject:ret forKey:format];
+        }
+    });
+
+    return ret;
+}
+
+@end
+
+@implementation NSDate (QHCoreLib)
+
+- (NSString *)qh_stringFromDateFormat:(NSString *)format
+{
+    return [[NSDateFormatter qh_sharedFormatter:format] stringFromDate:self];
+}
+
+- (NSCalendar *)qh_sharedCalendar
+{
+    static NSCalendar *calendar = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+        calendar.timeZone = [NSTimeZone timeZoneWithName:@"Asia/Shanghai"];
+    });
+    return calendar;
+}
+
+- (BOOL)qh_isWithinYear
+{
+    return [[self qh_sharedCalendar] isDate:self equalToDate:[NSDate date] toUnitGranularity:NSCalendarUnitYear];
+}
+
+- (BOOL)qh_isWithinMonth
+{
+    return [[self qh_sharedCalendar] isDate:self equalToDate:[NSDate date] toUnitGranularity:NSCalendarUnitMonth];
+}
+
+- (BOOL)qh_isWithinWeek
+{
+    NSTimeInterval intervalNow = [[NSDate date] timeIntervalSinceReferenceDate];
+    NSTimeInterval intervalThis = [self timeIntervalSinceReferenceDate];
+
+    static NSTimeInterval weekInSeconds = 60 * 60 * 24 * 7;
+
+    return ((int)(intervalNow / weekInSeconds)) == ((int)(intervalThis / weekInSeconds));
+}
+
+- (BOOL)qh_isWithinWestWeek
+{
+    NSCalendarUnit units = (NSCalendarUnitYear
+                            | NSCalendarUnitMonth
+                            | NSCalendarUnitWeekOfYear);
+
+    NSDateComponents *now = [[self qh_sharedCalendar] components:units fromDate:[NSDate date]];
+    NSDateComponents *this = [[self qh_sharedCalendar] components:units fromDate:self];
+
+    return (now.year == this.year
+            && now.month == this.month
+            && now.weekOfYear == this.weekOfYear);
+}
+
+- (NSInteger)qh_weekDayIndex
+{
+    NSInteger index = [[self qh_sharedCalendar] component:NSCalendarUnitWeekday fromDate:self];
+    return ((index + 5) % 7) + 1;
+}
+
+- (BOOL)qh_isWithinDay
+{
+    return [[self qh_sharedCalendar] isDate:self equalToDate:[NSDate date] toUnitGranularity:NSCalendarUnitDay];
+}
+
+- (BOOL)qh_isWithinHour
+
+{
+    return [[self qh_sharedCalendar] isDate:self equalToDate:[NSDate date] toUnitGranularity:NSCalendarUnitHour];
+}
+
+- (BOOL)qh_isWithinMinute
+{
+    return [[self qh_sharedCalendar] isDate:self equalToDate:[NSDate date] toUnitGranularity:NSCalendarUnitMinute];
 }
 
 @end

@@ -3,7 +3,7 @@
 //  QHCoreLib
 //
 //  Created by changtang on 2017/5/24.
-//  Copyright © 2017年 Tencent. All rights reserved.
+//  Copyright © 2017年 TCTONY. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -18,6 +18,14 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype _Nullable)qh_cast:(id)obj; // warnOnFailure:YES
 
 + (instancetype _Nullable)qh_cast:(id)obj warnOnFailure:(BOOL)warnOnFailure;
+
+@property (nonatomic, strong) id _Nullable qh_handy_carry;
+@property (nonatomic, strong) id _Nullable qh_handy_carry2;
+@property (nonatomic, strong) id _Nullable qh_handy_carry3;
+
+@property (nonatomic, weak) id _Nullable qh_handy_weakCarry;
+@property (nonatomic, weak) id _Nullable qh_handy_weakCarry2;
+@property (nonatomic, weak) id _Nullable qh_handy_weakCarry3;
 
 @end
 
@@ -100,6 +108,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)qh_setObject:(ObjectType)anObject forKey:(KeyType)aKey;
 
+- (ObjectType _Nullable)qh_objectForKey:(KeyType)key
+            createIfNotExists:(ObjectType(^ _Nullable)(void))createBlock;
+
 @end
 
 @interface NSMutableSet<ObjectType> (QHCoreLib)
@@ -140,6 +151,47 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString * _Nullable)qh_mainBundle_shortVersion;
 + (NSString * _Nullable)qh_mainBundle_name;
 + (NSString * _Nullable)qh_mainBundle_displayName;
+
+@end
+
+QH_EXTERN NSString * const kQHDateFormatFull;
+QH_EXTERN NSString * const kQHDateFormatDate;
+QH_EXTERN NSString * const kQHDateFormatDateChinese;
+QH_EXTERN NSString * const kQHDateFormatDateShort;
+QH_EXTERN NSString * const kQHDateFormatDateShortChinese;
+QH_EXTERN NSString * const kQHDateFormatMouthDay;
+QH_EXTERN NSString * const kQHDateFormatMouthDayChinese;
+QH_EXTERN NSString * const kQHDateFormatTime;
+QH_EXTERN NSString * const kQHDateFormatTimeExtra;
+QH_EXTERN NSString * const kQHDateFormatWeekNumber;
+QH_EXTERN NSString * const kQHDateFormatWeekStringShort;
+QH_EXTERN NSString * const kQHDateFormatWeekStringLong;
+
+
+@interface NSDateFormatter (QHCoreLib)
+
++ (NSDateFormatter *)qh_sharedFormatter:(NSString *)format;
+
+@end
+
+@interface NSDate (QHCoreLib)
+
+- (NSString *)qh_stringFromDateFormat:(NSString *)format;
+
+- (NSCalendar *)qh_sharedCalendar;
+
+- (BOOL)qh_isWithinYear;
+- (BOOL)qh_isWithinMonth;
+
+- (BOOL)qh_isWithinWeek;
+- (BOOL)qh_isWithinWestWeek;
+// 星期一~星期日:1-7
+- (NSInteger)qh_weekDayIndex;
+
+- (BOOL)qh_isWithinDay;
+- (BOOL)qh_isWithinHour;
+- (BOOL)qh_isWithinMinute;
+
 
 @end
 

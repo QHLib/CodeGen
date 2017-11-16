@@ -6,6 +6,6 @@ target 'CodeGen' do
   # use_frameworks!
 
   # Pods for CodeGen
-  pod 'QHCoreLib', :git => 'http://git.code.oa.com/QHLib/QHCoreLib.git'
+  pod 'QHCoreLib', :git => 'http://github.com/QHLib/QHCoreLib.git'
 
 end

@@ -1,1 +1,1 @@
-../../../QHCoreLib/QHCoreLib/Network/Worker-internal/AFNetworking-2.5.0/AFURLResponseSerialization.h
+../../../QHCoreLib/QHCoreLib/Network/Worker-internal/AFNetworking-3.1.0/AFURLResponseSerialization.h

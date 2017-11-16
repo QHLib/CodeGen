@@ -2,16 +2,16 @@
   "name": "QHCoreLib",
   "version": "0.0.23",
   "summary": "QHCoreLib inlucdes some macros and util classes.",
-  "homepage": "http://git.code.oa.com/QHLib/QHCoreLib.git",
+  "homepage": "http://github.com/QHLib/QHCoreLib.git",
   "license": "MIT",
   "authors": {
-    "changtang(唐畅)": "changtang@tencent.com"
+    "tctony(唐畅)": "tangchang21@gmail.com"
   },
   "platforms": {
     "ios": "8.0"
   },
   "source": {
-    "git": "http://git.code.oa.com/QHLib/QHCoreLib.git",
+    "git": "http://github.com/QHLib/QHCoreLib.git",
     "tag": "0.0.23"
   },
   "requires_arc": true,

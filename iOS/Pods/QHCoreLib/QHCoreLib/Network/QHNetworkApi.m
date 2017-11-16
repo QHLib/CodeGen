@@ -3,7 +3,7 @@
 //  QHCoreLib
 //
 //  Created by changtang on 2017/5/23.
-//  Copyright © 2017年 Tencent. All rights reserved.
+//  Copyright © 2017年 TCTONY. All rights reserved.
 //
 
 #import "QHNetworkApi.h"
@@ -52,7 +52,7 @@ NSString * const QHNetworkApiErrorDomain = @"QHNetworkApiErrorDomain";
     QHAssertReturnVoidOnFailure(request != nil, @"build request for %@ failed", self);
 
     self.worker = [QHNetworkWorker workerFromRequest:request];
-    
+
     [super startWithSuccess:(QHAsyncTaskSuccessBlock)success
                        fail:(QHAsyncTaskFailBlock)fail];
 }

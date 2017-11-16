@@ -3,7 +3,7 @@
 //  QHCoreLib
 //
 //  Created by Tony Tang on 2017/6/21.
-//  Copyright © 2017年 Tencent. All rights reserved.
+//  Copyright © 2017年 TCTONY. All rights reserved.
 //
 
 #ifndef QHInternal_h
@@ -47,6 +47,12 @@ NS_ASSUME_NONNULL_BEGIN
 #   define QHCoreLibDebug(...)      NSLog(@"QHCoreLibDebug: " __VA_ARGS__)
 #else
 #   define QHCoreLibDebug(...)
+#endif
+
+#if _QHCoreLibDebug
+#   define QHCoreLibInfo(...)      NSLog(@"QHCoreLibInfo: " __VA_ARGS__)
+#else
+#   define QHCoreLibInfo(...)
 #endif
 
 NS_ASSUME_NONNULL_END

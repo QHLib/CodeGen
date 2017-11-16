@@ -3,7 +3,7 @@
 //  QQHouse
 //
 //  Created by lei on 15-08-11.
-//  Copyright (c) 2014年 Tencent. All rights reserved.
+//  Copyright (c) 2014年 TCTONY. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -61,6 +61,7 @@ NS_ASSUME_NONNULL_END
 #import <QHCoreLib/QHNetworkWorker.h>
 #import <QHCoreLib/QHNetworkApi.h>
 #import <QHCoreLib/QHNetworkApi+internal.h>
+#import <QHCoreLib/QHNetworkApiManager.h>
 #import <QHCoreLib/QHNetworkHttpApi.h>
 #import <QHCoreLib/QHNetworkHtmlApi.h>
 #import <QHCoreLib/QHNetworkJsonApi.h>

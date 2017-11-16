@@ -3,7 +3,7 @@
 //  QHCoreLib
 //
 //  Created by changtang on 2017/5/19.
-//  Copyright © 2017年 Tencent. All rights reserved.
+//  Copyright © 2017年 TCTONY. All rights reserved.
 //
 
 #import "QHUtil.h"
@@ -235,6 +235,57 @@ uint64_t QHTimestampInSeconds()
 uint64_t QHTimestampInMilliseconds()
 {
     return (uint64_t)(QHTimestampInDouble() * 1000);
+}
+
+// timestamp 0 是北京时间1970年1月1日 08:00 星期四
+uint64_t QHTimestampDayFloor(uint64_t timestamp)
+{
+    uint64_t delta = ((timestamp % 86400) + 8 * 3600) % 86400;
+    return timestamp - delta;
+}
+
+// timestamp 0 是北京时间1970年1月1日 08:00 星期四
+uint64_t QHTimestampWeekFloor(uint64_t timestamp)
+{
+    static uint64_t weekInSeconds = 7 * 86400;
+    uint64_t delta = ((timestamp % weekInSeconds) + 3 * 86400 + 8 * 3600) % weekInSeconds;
+    return timestamp - delta;
+}
+
+CGFloat QHClamp(CGFloat value, CGFloat bounds1, CGFloat bounds2)
+{
+    if (bounds1 < bounds2) {
+        return MIN(MAX(value, bounds1), bounds2);
+    } else {
+        return MAX(MIN(value, bounds1), bounds2);
+    }
+}
+
+// https://stackoverflow.com/a/9169489/822417
+BOOL QHCharacterIsChinese(unichar character)
+{
+    if ((character >= 0x4E00 && character <= 0x9FFF)
+        || (character >= 0x3400 && character <= 0x4DBF)) {
+        return YES;
+    }
+    return NO;
+}
+
+BOOL QHCharacterIsAlphabet(unichar character)
+{
+    return ((character >= 'a' && character <= 'z')
+            || (character >= 'A' && character <= 'Z'));
+}
+
+BOOL QHCharacterIsNumber(unichar character)
+{
+    return (character >= '0' && character <= '9');
+}
+
+BOOL QHCharacterIsAlpNum(unichar character)
+{
+    return (QHCharacterIsAlphabet(character)
+            || QHCharacterIsNumber(character));
 }
 
 NS_ASSUME_NONNULL_END

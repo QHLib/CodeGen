@@ -3,7 +3,7 @@
 //  QHCommon
 //
 //  Created by changtang on 2017/5/17.
-//  Copyright © 2017年 Tencent. All rights reserved.
+//  Copyright © 2017年 TCTONY. All rights reserved.
 //
 
 #ifndef QHDefines_h
@@ -13,6 +13,7 @@
 
 #import <libextobjc/extobjc.h>
 
+#import <objc/message.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -38,7 +39,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 #define QH_UNUSED_VAR(var) ((void)(var))
 
-#define QH_IS(obj, cls)                                 (obj && [obj isKindOfClass:[cls class]])
+#define QH_IS(obj, cls)                                 (obj != nil && [obj isKindOfClass:[cls class]])
 
 #define QH_IS_STRING(obj)                               (QH_IS(obj, NSString))
 #define QH_IS_NUMBER(obj)                               (QH_IS(obj, NSNumber))
@@ -91,6 +92,8 @@ NS_ASSUME_NONNULL_BEGIN
 #else
 #   define QH_DEPRECATED(_msg)
 #endif
+
+#define QH_C_ARRAY_SIZE(array, type) (sizeof(array)/sizeof(type))
 
 /**
  * Concat two literals. Supports macro expansions,
