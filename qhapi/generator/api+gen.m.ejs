@@ -13,9 +13,10 @@ QH_NETWORK_API_IMPL_INDIRECT(<%- className %>, <%- resultClassName %>,
 
 + (NSString *)p_url
 {
-    return @"<%- url %>";
+    return @"<%- locals.url ? url : "" %>";
 }
 
+<% if (locals.requests) { -%>
 <% requests.forEach(function(req) { -%>
 <%- include("partial/method_delc", { 'method': req }) %>
 <% const isPost = (req['method'] == 'POST'); -%>
@@ -32,6 +33,7 @@ QH_NETWORK_API_IMPL_INDIRECT(<%- className %>, <%- resultClassName %>,
 }
 
 <% }); -%>
+<% } -%>
 @end
 
 @implementation <%- resultClassName %> (gen)

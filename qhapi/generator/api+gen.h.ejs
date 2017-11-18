@@ -10,10 +10,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 QH_NETWORK_API_DECL(<%- className %>, <%- resultClassName %>);
 
+<% if (locals.requests) { -%>
 <% requests.forEach(function(req) { -%>
 <%- include('partial/method_delc', { 'method': req }) -%>;
 
 <% }); -%>
+<% } -%>
 @end
 
 @interface <%- resultClassName %> (gen)
