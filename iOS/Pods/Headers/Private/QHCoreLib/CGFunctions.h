@@ -1,1 +1,0 @@
-../../../QHCoreLib/QHCoreLib/UI/CGFunctions.h

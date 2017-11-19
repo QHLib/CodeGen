@@ -1,7 +1,7 @@
 CONFIGURATION_BUILD_DIR = $PODS_CONFIGURATION_BUILD_DIR/QHCoreLib
+FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/UIDevice-Hardware" "$PODS_CONFIGURATION_BUILD_DIR/libextobjc"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/QHCoreLib" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/QHCoreLib" "${PODS_ROOT}/Headers/Public/UIDevice-Hardware" "${PODS_ROOT}/Headers/Public/libextobjc"
-LIBRARY_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/UIDevice-Hardware" "$PODS_CONFIGURATION_BUILD_DIR/libextobjc"
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Public"
 OTHER_LDFLAGS = -ObjC -framework "CoreGraphics" -framework "CoreTelephony" -framework "Foundation" -framework "MobileCoreServices" -framework "QuartzCore" -framework "Security" -framework "SystemConfiguration"
 PODS_BUILD_DIR = $BUILD_DIR
 PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)

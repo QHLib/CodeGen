@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A32243B9316449BDC3878F2A /* libPods-CodeGen.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E837B5E5767D31B698B983B /* libPods-CodeGen.a */; };
+		ADD007497D3BD4C7EB3C7AC8 /* Pods_CodeGen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD48D6A50700A9709E612159 /* Pods_CodeGen.framework */; };
 		EA3854221F677A2200AF2F83 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3854211F677A2200AF2F83 /* main.m */; };
 		EA3854251F677A2200AF2F83 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3854241F677A2200AF2F83 /* AppDelegate.m */; };
 		EA3854281F677A2200AF2F83 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3854271F677A2200AF2F83 /* ViewController.m */; };
@@ -23,9 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0E837B5E5767D31B698B983B /* libPods-CodeGen.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CodeGen.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3334BE243CB2A5C3B65DE90E /* Pods-CodeGen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeGen.release.xcconfig"; path = "Pods/Target Support Files/Pods-CodeGen/Pods-CodeGen.release.xcconfig"; sourceTree = "<group>"; };
 		C2D024DB4C27DAFFC223702D /* Pods-CodeGen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeGen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CodeGen/Pods-CodeGen.debug.xcconfig"; sourceTree = "<group>"; };
+		CD48D6A50700A9709E612159 /* Pods_CodeGen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CodeGen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA38541D1F677A2200AF2F83 /* CodeGen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeGen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA3854211F677A2200AF2F83 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EA3854231F677A2200AF2F83 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -55,7 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A32243B9316449BDC3878F2A /* libPods-CodeGen.a in Frameworks */,
+				ADD007497D3BD4C7EB3C7AC8 /* Pods_CodeGen.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,7 +65,7 @@
 		72C75ADF69CDAE0EBAB50B25 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0E837B5E5767D31B698B983B /* libPods-CodeGen.a */,
+				CD48D6A50700A9709E612159 /* Pods_CodeGen.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -170,7 +170,7 @@
 		EA3854151F677A2200AF2F83 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = TCTONY;
 				TargetAttributes = {
 					EA38541C1F677A2200AF2F83 = {
@@ -217,9 +217,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CodeGen/Pods-CodeGen-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/QHCoreLib/QHCoreLib.framework",
+				"${BUILT_PRODUCTS_DIR}/UIDevice-Hardware/UIDevice_Hardware.framework",
+				"${BUILT_PRODUCTS_DIR}/libextobjc/libextobjc.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QHCoreLib.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIDevice_Hardware.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libextobjc.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
