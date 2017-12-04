@@ -9,11 +9,17 @@ NS_ASSUME_NONNULL_BEGIN
 @implementation <%- className %> (gen)
 
 QH_NETWORK_API_IMPL_INDIRECT(<%- className %>, <%- resultClassName %>,
-                             <%- superClassName %>, <%- resultSuperClassName %>);
+<%- superClassName %>, <%- resultSuperClassName %>);
 
 + (NSString *)p_url
 {
-    return @"<%- locals.url ? url : "" %>";
+    NSString *url = @"<%- locals.url ? url : "" %>";
+
+    if ([self respondsToSelector:@selector(modifyUrl:)]) {
+        return [self modifyUrl:url];
+    }
+
+    return url;
 }
 
 <% if (locals.requests) { -%>

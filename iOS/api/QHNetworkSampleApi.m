@@ -8,6 +8,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @implementation QHNetworkSampleApi
 
++ (NSString *)modifyUrl:(NSString *)url
+{
+    if ([url hasPrefix:@"https://"]) {
+        url = [url stringByReplacingCharactersInRange:NSMakeRange(0, 5) withString:@"http"];
+    }
+    return url;
+}
+
 @end
 
 @implementation QHNetworkSampleApiResult

@@ -9,11 +9,17 @@ NS_ASSUME_NONNULL_BEGIN
 @implementation QHNetworkSampleApi (gen)
 
 QH_NETWORK_API_IMPL_INDIRECT(QHNetworkSampleApi, QHNetworkSampleApiResult,
-                             QHNetworkJsonApi, QHNetworkJsonApiResult);
+QHNetworkJsonApi, QHNetworkJsonApiResult);
 
 + (NSString *)p_url
 {
-    return @"https://httpbin.org/ip";
+    NSString *url = @"https://httpbin.org/ip";
+
+    if ([self respondsToSelector:@selector(modifyUrl:)]) {
+        return [self modifyUrl:url];
+    }
+
+    return url;
 }
 
 + (instancetype)request

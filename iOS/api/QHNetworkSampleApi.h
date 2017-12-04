@@ -8,6 +8,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface QHNetworkSampleApi : QHNetworkJsonApi
 
++ (NSString *)modifyUrl:(NSString *)url;
+
 @end
 
 @interface QHNetworkSampleApiResult : QHNetworkJsonApiResult
